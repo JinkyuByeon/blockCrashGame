@@ -20,7 +20,7 @@ namespace blockCrashGame
         int Ball_y = 4;
         int score = 0;
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Ball_movement()
         {
             ball.Left += Ball_x;
             ball.Top += Ball_y;
@@ -32,6 +32,7 @@ namespace blockCrashGame
             {
                 Ball_y = -Ball_y;
             }
+
         }
 
         private void Get_Score()
@@ -64,24 +65,24 @@ namespace blockCrashGame
                 MessageBox.Show("Game over");
             }
         }
-    
-    private void Form1_KeyDown(object sender, KeyEventArgs e)
-    {
-        if (e.KeyCode == Keys.Left && player.Left > 0)
-        {
-            player.Left -= 5;
-        }
-        if (e.KeyCode == Keys.Right && player.Right < 480)
-        {
-            player.Left += 5;
-        }
-    }
-    private void timer1_Tick(object sender, EventArgs e)
-    {
-        Ball_movement();
-        Get_Score();
-        Game_over();
-    }
-  }  
-}
 
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            Ball_movement();
+            Get_Score();
+            Game_over();
+        }
+
+        private void Form1_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Left && player.Left > 0)
+            {
+                player.Left -= 5;
+            }
+            if (e.KeyCode == Keys.Right && player.Right < 480)
+            {
+                player.Left += 5;
+            }
+        }
+    }
+}

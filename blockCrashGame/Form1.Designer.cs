@@ -31,7 +31,6 @@ namespace blockCrashGame
         {
             this.components = new System.ComponentModel.Container();
             this.lbl_score = new System.Windows.Forms.Label();
-            this.ball = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -55,8 +54,7 @@ namespace blockCrashGame
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
+            this.ball = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -79,7 +77,7 @@ namespace blockCrashGame
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_score
@@ -93,18 +91,6 @@ namespace blockCrashGame
             this.lbl_score.Size = new System.Drawing.Size(62, 19);
             this.lbl_score.TabIndex = 21;
             this.lbl_score.Text = "Score";
-            // 
-            // ball
-            // 
-            this.ball.BackColor = System.Drawing.Color.Transparent;
-            this.ball.Image = global::blockCrashGame.Properties.Resources.Soccer_ball_svg;
-            this.ball.Location = new System.Drawing.Point(365, 334);
-            this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(69, 70);
-            this.ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ball.TabIndex = 29;
-            this.ball.TabStop = false;
-            this.ball.Tag = "";
             // 
             // pictureBox7
             // 
@@ -191,6 +177,7 @@ namespace blockCrashGame
             // timer1
             // 
             this.timer1.Interval = 25;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // pictureBox8
             // 
@@ -332,16 +319,22 @@ namespace blockCrashGame
             this.pictureBox21.TabIndex = 44;
             this.pictureBox21.TabStop = false;
             // 
-            // fileSystemWatcher1
+            // ball
             // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
+            this.ball.Image = global::blockCrashGame.Properties.Resources.Soccer_ball_svg;
+            this.ball.Location = new System.Drawing.Point(385, 380);
+            this.ball.Name = "ball";
+            this.ball.Size = new System.Drawing.Size(38, 34);
+            this.ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ball.TabIndex = 46;
+            this.ball.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 474);
+            this.Controls.Add(this.ball);
             this.Controls.Add(this.pictureBox21);
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox19);
@@ -357,7 +350,6 @@ namespace blockCrashGame
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.player);
-            this.Controls.Add(this.ball);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
@@ -367,9 +359,8 @@ namespace blockCrashGame
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_score);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
+            this.Text = "From1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -392,7 +383,7 @@ namespace blockCrashGame
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,7 +399,6 @@ namespace blockCrashGame
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox ball;
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -425,7 +415,7 @@ namespace blockCrashGame
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.PictureBox pictureBox21;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.PictureBox ball;
     }
 }
 
