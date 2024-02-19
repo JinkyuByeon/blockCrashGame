@@ -333,7 +333,7 @@ namespace blockCrashGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 474);
+            this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.ball);
             this.Controls.Add(this.pictureBox21);
             this.Controls.Add(this.pictureBox20);

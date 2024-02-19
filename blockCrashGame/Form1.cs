@@ -20,20 +20,6 @@ namespace blockCrashGame
         int Ball_y = 4;
         int score = 0;
 
-        private void Ball_movement()
-        {
-            ball.Left += Ball_x;
-            ball.Top += Ball_y;
-            if (ball.Left + ball.Width > ClientSize.Width || ball.Left < 0)
-            {
-                Ball_x = -Ball_x;
-            }
-            if (ball.Top < 0 || ball.Bounds.IntersectsWith(player.Bounds))
-            {
-                Ball_y = -Ball_y;
-            }
-
-        }
 
         private void Get_Score()
         {
@@ -73,6 +59,20 @@ namespace blockCrashGame
             Game_over();
         }
 
+        private void Ball_movement()
+        {
+            ball.Left += Ball_x;
+            ball.Top += Ball_y;
+            if(ball.Left + ball.Width > ClientSize.Width || ball.Left < 0)
+            {
+                Ball_x = -Ball_x;
+            }
+            if(ball.Top < 0 || ball.Bounds.IntersectsWith(player.Bounds))
+            {
+                Ball_y = -Ball_y;
+            }
+        }
+
         private void Form1_KeyDown_1(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left && player.Left > 0)
@@ -84,5 +84,6 @@ namespace blockCrashGame
                 player.Left += 5;
             }
         }
+
     }
 }
