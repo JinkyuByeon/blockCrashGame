@@ -176,6 +176,7 @@ namespace blockCrashGame
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Interval = 25;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
@@ -228,6 +229,7 @@ namespace blockCrashGame
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 35;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Tag = "block";
             // 
             // pictureBox13
             // 
@@ -248,6 +250,7 @@ namespace blockCrashGame
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 37;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Tag = "block";
             // 
             // pictureBox15
             // 
@@ -268,6 +271,7 @@ namespace blockCrashGame
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 39;
             this.pictureBox16.TabStop = false;
+            this.pictureBox16.Tag = "block";
             // 
             // pictureBox17
             // 
