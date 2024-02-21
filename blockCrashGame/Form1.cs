@@ -54,22 +54,31 @@ namespace blockCrashGame
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
-            Ball_movement();
+            int speedX = initialSpeedX + acceleration * score;
+            int speedY = initialSpeedY + acceleration * score;
+
+            Ball_movement(speedX, speedY);
             Get_Score();
             Game_over();
         }
 
-        private void Ball_movement()
+        private int initialSpeedX = 4; // 초기 공의 이동 속도
+        private int initialSpeedY = 4;
+        private int acceleration = 1; // 공의 이동 속도가 증가하는 정도
+
+        private void Ball_movement(int speedX, int speedY)
         {
-            ball.Left += Ball_x;
-            ball.Top += Ball_y;
-            if(ball.Left + ball.Width > ClientSize.Width || ball.Left < 0)
+            ball.Left += speedX;
+            ball.Top += speedY;
+
+            // 공이 벽에 부딪혔을 때 방향을 바꿔줌
+            if (ball.Left + ball.Width >= ClientSize.Width || ball.Left <= 0)
             {
-                Ball_x = -Ball_x;
+                speedX = -speedX; // x축 방향 전환
             }
-            if(ball.Top < 0 || ball.Bounds.IntersectsWith(player.Bounds))
+            if (ball.Top <= 0 || ball.Bounds.IntersectsWith(player.Bounds))
             {
-                Ball_y = -Ball_y;
+                speedY = -speedY; // y축 방향 전환
             }
         }
 
